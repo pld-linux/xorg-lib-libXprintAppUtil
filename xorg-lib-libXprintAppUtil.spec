@@ -1,7 +1,5 @@
-# $Rev: 3312 $, $Date: 2005-08-27 17:42:48 $
-#
 Summary:	XprintAppUtil library
-Summary(pl):	libXprintAppUtil
+Summary(pl):	Biblioteka XprintAppUtil
 Name:		xorg-lib-libXprintAppUtil
 Version:	0.99.0
 Release:	0.03
@@ -12,9 +10,9 @@ Source0:	http://xorg.freedesktop.org/X11R7.0-RC0/lib/libXprintAppUtil-%{version}
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	xorg-lib-libXprintUtil-devel
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 0.19
+BuildRequires:	xorg-lib-libXprintUtil-devel
 BuildRequires:	xorg-util-util-macros
 BuildRoot:	%{tmpdir}/libXprintAppUtil-%{version}-root-%(id -u -n)
 
@@ -26,12 +24,11 @@ XprintAppUtil library.
 %description -l pl
 Biblioteka XprintAppUtil.
 
-
 %package devel
 Summary:	Header files libXprintAppUtil development
 Summary(pl):	Pliki nag³ówkowe do biblioteki libXprintAppUtil
 Group:		X11/Development/Libraries
-Requires:	xorg-lib-libXprintAppUtil = %{version}-%{release}
+Requires:	%{name} = %{version}-%{release}
 Requires:	xorg-lib-libXprintUtil-devel
 
 %description devel
@@ -46,12 +43,11 @@ Biblioteka XprintAppUtil.
 Pakiet zawiera pliki nag³ówkowe niezbêdne do kompilowania programów
 u¿ywaj±cych biblioteki libXprintAppUtil.
 
-
 %package static
-Summary:	Static libXprintAppUtil libraries
-Summary(pl):	Biblioteki statyczne libXprintAppUtil
-Group:		Development/Libraries
-Requires:	xorg-lib-libXprintAppUtil-devel = %{version}-%{release}
+Summary:	Static libXprintAppUtil library
+Summary(pl):	Biblioteka statyczna libXprintAppUtil
+Group:		X11/Development/Libraries
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 XprintAppUtil library.
@@ -61,12 +57,10 @@ This package contains the static libXprintAppUtil library.
 %description static -l pl
 Biblioteka XprintAppUtil.
 
-Pakiet zawiera statyczne biblioteki libXprintAppUtil.
-
+Pakiet zawiera statyczn± bibliotekê libXprintAppUtil.
 
 %prep
 %setup -q -n libXprintAppUtil-%{version}
-
 
 %build
 %{__libtoolize}
@@ -78,7 +72,6 @@ Pakiet zawiera statyczne biblioteki libXprintAppUtil.
 
 %{__make}
 
-
 %install
 rm -rf $RPM_BUILD_ROOT
 
@@ -86,28 +79,23 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	pkgconfigdir=%{_pkgconfigdir}
 
-
 %clean
 rm -rf $RPM_BUILD_ROOT
-
 
 %post	-p /sbin/ldconfig
 %postun -p /sbin/ldconfig
 
-
 %files
 %defattr(644,root,root,755)
 %doc ChangeLog
-%attr(755,root,wheel) %{_libdir}/libXprintAppUtil.so.*
-
+%attr(755,root,root) %{_libdir}/libXprintAppUtil.so.*.*.*
 
 %files devel
 %defattr(644,root,root,755)
-%{_includedir}/X11/XprintAppUtil/*.h
+%attr(755,root,root) %{_libdir}/libXprintAppUtil.so
 %{_libdir}/libXprintAppUtil.la
-%attr(755,root,wheel) %{_libdir}/libXprintAppUtil.so
+%{_includedir}/X11/XprintAppUtil/*.h
 %{_pkgconfigdir}/xprintapputil.pc
-
 
 %files static
 %defattr(644,root,root,755)
