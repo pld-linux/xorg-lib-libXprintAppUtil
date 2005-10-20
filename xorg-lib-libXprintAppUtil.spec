@@ -92,6 +92,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libXprintAppUtil.so
 %{_libdir}/libXprintAppUtil.la
+%dir %{_includedir}/X11/XprintAppUtil
 %{_includedir}/X11/XprintAppUtil/*.h
 %{_pkgconfigdir}/xprintapputil.pc
 
