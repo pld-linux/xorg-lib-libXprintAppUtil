@@ -23,8 +23,8 @@ XprintAppUtil library.
 Biblioteka XprintAppUtil.
 
 %package devel
-Summary:	Header files libXprintAppUtil development
-Summary(pl):	Pliki nag³ówkowe do biblioteki libXprintAppUtil
+Summary:	Header files for libXprintAppUtil library
+Summary(pl):	Pliki nag³ówkowe biblioteki libXprintAppUtil
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	xorg-lib-libXprintUtil-devel
@@ -33,7 +33,7 @@ Requires:	xorg-lib-libXprintUtil-devel
 XprintAppUtil library.
 
 This package contains the header files needed to develop programs that
-use these libXprintAppUtil.
+use libXprintAppUtil.
 
 %description devel -l pl
 Biblioteka XprintAppUtil.
