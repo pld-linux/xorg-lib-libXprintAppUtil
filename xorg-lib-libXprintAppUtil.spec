@@ -2,10 +2,10 @@ Summary:	XprintAppUtil library
 Summary(pl):	Biblioteka XprintAppUtil
 Name:		xorg-lib-libXprintAppUtil
 Version:	1.0.1
-Release:	0.1
+Release:	1
 License:	MIT
 Group:		X11/Libraries
-Source0:	http://xorg.freedesktop.org/releases/X11R7.0/src/lib/libXprintAppUtil-%{version}.tar.bz2
+Source0:	http://xorg.freedesktop.org/releases/individual/lib/libXprintAppUtil-%{version}.tar.bz2
 # Source0-md5:	d2de510570aa6714681109b2ba178365
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
