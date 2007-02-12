@@ -1,5 +1,5 @@
 Summary:	XprintAppUtil library
-Summary(pl.UTF-8):   Biblioteka XprintAppUtil
+Summary(pl.UTF-8):	Biblioteka XprintAppUtil
 Name:		xorg-lib-libXprintAppUtil
 Version:	1.0.1
 Release:	3
@@ -24,7 +24,7 @@ Biblioteka XprintAppUtil.
 
 %package devel
 Summary:	Header files for libXprintAppUtil library
-Summary(pl.UTF-8):   Pliki nagłówkowe biblioteki libXprintAppUtil
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libXprintAppUtil
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	xorg-lib-libXprintUtil-devel
@@ -43,7 +43,7 @@ używających biblioteki libXprintAppUtil.
 
 %package static
 Summary:	Static libXprintAppUtil library
-Summary(pl.UTF-8):   Biblioteka statyczna libXprintAppUtil
+Summary(pl.UTF-8):	Biblioteka statyczna libXprintAppUtil
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
