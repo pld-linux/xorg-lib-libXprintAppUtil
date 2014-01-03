@@ -87,7 +87,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc COPYING ChangeLog
 %attr(755,root,root) %{_libdir}/libXprintAppUtil.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libXprintAppUtil.so.?
+%attr(755,root,root) %ghost %{_libdir}/libXprintAppUtil.so.1
 
 %files devel
 %defattr(644,root,root,755)
