@@ -2,17 +2,21 @@ Summary:	XprintAppUtil library
 Summary(pl.UTF-8):	Biblioteka XprintAppUtil
 Name:		xorg-lib-libXprintAppUtil
 Version:	1.0.1
-Release:	7
+Release:	8
 License:	MIT
 Group:		X11/Libraries
-Source0:	http://xorg.freedesktop.org/releases/individual/lib/libXprintAppUtil-%{version}.tar.bz2
+Source0:	https://xorg.freedesktop.org/releases/individual/lib/libXprintAppUtil-%{version}.tar.bz2
 # Source0-md5:	d2de510570aa6714681109b2ba178365
-URL:		http://xorg.freedesktop.org/
+URL:		https://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 1:0.19
+BuildRequires:	xorg-lib-libX11-devel
+BuildRequires:	xorg-lib-libXau-devel
+BuildRequires:	xorg-lib-libXp-devel
 BuildRequires:	xorg-lib-libXprintUtil-devel
+BuildRequires:	xorg-proto-printproto-devel
 BuildRequires:	xorg-util-util-macros
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -27,7 +31,10 @@ Summary:	Header files for libXprintAppUtil library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libXprintAppUtil
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	xorg-lib-libX11-devel
+Requires:	xorg-lib-libXp-devel
 Requires:	xorg-lib-libXprintUtil-devel
+Requires:	xorg-proto-xproto-devel
 
 %description devel
 XprintAppUtil library.
@@ -74,8 +81,9 @@ Pakiet zawiera statyczną bibliotekę libXprintAppUtil.
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	pkgconfigdir=%{_pkgconfigdir}
+	DESTDIR=$RPM_BUILD_ROOT
+
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libXprintAppUtil.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -92,7 +100,6 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libXprintAppUtil.so
-%{_libdir}/libXprintAppUtil.la
 %dir %{_includedir}/X11/XprintAppUtil
 %{_includedir}/X11/XprintAppUtil/*.h
 %{_pkgconfigdir}/xprintapputil.pc
